@@ -14,14 +14,14 @@ function App() {
     });
   }, []);
 
+  const { signOut } = useAuthenticator();
+
   function createTodo() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
   }
 
   function deleteTodo(id: string) {
     client.models.Todo.delete({ id });
-
-  const { signOut } = useAuthenticator();  
   }
 
   return (
